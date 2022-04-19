@@ -1,129 +1,65 @@
-> 站在巨人的肩膀上，并不是高的表现，反而使自己变得渺小~只有吸收了巨人的营养，茁壮自己才是真正的高大！ --笔者
+<!--
+ * @Author: will
+ * @LastEditors: will
+ * @Description:
+-->
 
-# ApiAdmin
+> USDT_TRC20 充值 API.USDT TRC20 TRON 微信，支付宝,云闪付,alipay,wechat 免签支付
 
-[![ApiAdmin](https://img.shields.io/hexpm/l/plug.svg)](http://www.apiadmin.org/)
-[![ApiAdmin](https://img.shields.io/badge/release-5.0.0-blue.svg)](http://www.apiadmin.org/)
-[![ApiAdmin](https://img.shields.io/badge/build-passing-brightgreen.svg)](http://www.apiadmin.org/)
-[![ApiAdmin](https://img.shields.io/badge/ApiAdmin-5.0.0-brightgreen.svg)](http://www.apiadmin.org/)
+## 主要功能
 
-## 前端页面
+- USDT.trc20 支付接口
+- 微信免签支付
+- 支付宝免签支付
+- 云闪付免签支付
 
-ApiAdmin5.0 是一个前后端完全分离的项目，前端采用 Vue 构建，如需要可视化配置的请移步：[ApiAdmin-WEB](https://www.aaa.org-WEB)
+## USDT，TRC20 支付介绍
 
-## 快速安装
+### API 下单,多地址收币,回调推送
 
-> 第一步：安装代码
+> 多个地址轮询收币, 接口下单, 订单号标识,快速回调, 查询方便
 
-```
-composer create-project apiadmin/apiadmin
-```
+### 通过支付数量回调,支持高并发
 
-```
-你也可以：先获取基础代码 git clone https://www.aaa.org.git   再使用composer安装 composer install
-```
+> 通过支付数量发起回调, 数量不对会导致掉单, 补单后请自行保存交易 Id
 
-> 第二步：检测环境以及配置数据库
+### 提币归集,自动转币
 
-```
-php think apiadmin:install
-```
+> 申请提币, 系统归集多地址下的数字货币, 扣除手续费后, 自动提取到指定地址
 
-> 第三步：完成数据迁移
+### 离线地址,匿名交易
 
-```
-php think migrate:run
+> 匿名收款,定时更换离线收款地址,不影响提币归集
 
-* 如出现报错：There are no commands defined in the "migrate" namespace.
-* 请先更新下think版本：composer update topthink/framework
-* 再执行：php think migrate:run
-* 特别鸣谢：@孙晔华
-```
+## 重要
 
-> 第四步：构建后端路由
+> 系统测试中,免收手续费,自行负责归集消耗
 
-```
-php think apiadmin:adminRouter
-```
+## 微信个码支付介绍
 
-> 第五步：获取管理后台账号密码
+- 无需挂机
+- 采用 websock 接口,无需轮训查询是否支付
+- 支持固码
+- 异常提醒
+- 自动开启
+-
 
-```
-cat install/lock.ini
-```
+## 支付宝/银行卡
 
-## 灵 感
+- 采用手机端监控
 
-首先自我介绍下吧，我是一个 PHP 程序员，目前就职于某上市集团。我第一份工作是做微信开发的，这也是我入行以来第一次做的商业上线项目，虽然我只是充当了其中一个不是太重要的角色，但是感谢它让我第一次接触了 API，也让我第一次对于 API 产生了浓厚的兴趣。之后的一段时间内甚至疯狂的收集过各种免费的 API 接口！然而一直只是在用 API，却没有为 API 贡献过些什么。
+# 项目图片
 
-开源框架用了很多，开源代码看了很多，github、git@osc、Stack Overflow 这些优秀的平台帮助了我很多，所以，我觉得是时候为开源做点什么。更是给开源项目 PhalApi 贡献过代码，也正是这一个契机使得我正式迈向开源社区。随着时间的推移，PhalApi 的战绩赫赫，它的壮大更加坚定了 Api 的地位，既然未来的互联网世界中 API 占了很重要的地位，既然越来越多的人开始开发 API，那么无状态的 API 如何去管理呢？因此**ApiAdmin**来了~
+![输入图片说明](https://apiupload.oss-cn-beijing.aliyuncs.com/tinymce/20220419/b4f1b47f5dc8a939c186f74690539e83.png 'api.png')
 
-## 愿 景
+![输入图片说明](https://apiupload.oss-cn-beijing.aliyuncs.com/tinymce/20220419/12b3110af50953cb184a7901c50fa73a.png 'api.png')
 
-> 希望有人用它，希望更多的人用它。
-> 希望它能帮助到你，希望它能帮助到更多的你。
+![输入图片说明](https://apiupload.oss-cn-beijing.aliyuncs.com/tinymce/20220419/6032d99b0d96bc0493a0ca2aa83dbe6d.png 'api.png')
 
-## 项目简介
+![输入图片说明](https://apiupload.oss-cn-beijing.aliyuncs.com/tinymce/20220419/cd21ad18daf55fa92d81678164204f02.png 'api.png')
 
-**系统需求**
-
-- PHP >= 7.2.5
-- MySQL >= 5.5.3
-- Redis
-
-**项目构成**
-
-- ThinkPHP v6.0.\*
-- Vue 2.\*
-- ...
-
-**功能简介**
-
-1.  接口文档自动生成
-2.  接口输入参数自动检查
-3.  接口输出参数数据类型自动规整
-4.  灵活的参数规则设定
-5.  支持三方 Api 无缝融合
-6.  本地二次开发友好
-7.  ...
-
-```
-ApiAdmin（PHP部分）
-├─ 系统维护
-|  ├─ 菜单管理 - 编辑访客权限，处理菜单父子关系，被权限系统依赖（极为重要）
-|  ├─ 用户管理 - 添加新用户，封号，删号以及给账号分配权限组
-|  ├─ 权限管理 - 权限组管理，给权限组添加权限，将用户提出权限组
-|  └─ 操作日志 - 记录管理员的操作，用于追责，回溯和备案
-|  ...
-```
-
-**页面截图**
-
-![输入图片说明](https://gitee.com/uploads/images/2018/0224/095358_19cb42d0_110856.png 'api.png')
-
-![输入图片说明](https://gitee.com/uploads/images/2018/0224/095410_55dc23e1_110856.png 'app.png')
-
-![输入图片说明](https://gitee.com/uploads/images/2018/0224/095420_bddff990_110856.png 'auth1.png')
-
-![输入图片说明](https://gitee.com/uploads/images/2018/0224/095427_fa86e42d_110856.png 'auth2.png')
-
-![输入图片说明](https://gitee.com/uploads/images/2018/0224/095436_3600de17_110856.png 'lock.png')
-
-![输入图片说明](https://gitee.com/uploads/images/2018/0224/095444_d2a88da0_110856.png 'user.png')
-
-**项目特性**
-
-- 开放源码
-- 保持生机
-- 不断更新
-- 响应市场
-
-**开源，我们在路上！**
-
-## 鸣谢
-
-ApiAdmin 走到今天，也正式迈入 4.1 时代了，我们怀着激动的心情迎来这次发布。在新版本发布之际，我们真诚的感谢从 1.0 到 5.0 陪我们一路走来的朋友们。感谢你们的支持和信任！当然也感谢#开源中国#给大陆本土开源提供这样一个优秀的平台。
-
-## 附：升级指南
-
-很抱歉的告诉大家，虽然我们尽可能的和往期版本进行了兼容，但是，由于整体架构变化很大，所以想要零成本升级有点困难。我们建议大家可以使用 5.0 做新接口，慢慢的将 4.1 版本的接口移植到 5.0。
+![输入图片说明](https://apiupload.oss-cn-beijing.aliyuncs.com/tinymce/20220419/0384e9a94182b32a99148969c359d92f.png 'api.png')
+![输入图片说明](https://apiupload.oss-cn-beijing.aliyuncs.com/tinymce/20220419/444c48b6aa8b07211bb11327ab182e02.png 'api.png')
+![输入图片说明](https://apiupload.oss-cn-beijing.aliyuncs.com/tinymce/20220419/5ede6de3de421f094f791a942c1479b3.png 'api.png')
+![输入图片说明](https://apiupload.oss-cn-beijing.aliyuncs.com/tinymce/20220419/e57d6214c0a4a881e643a3c67f387166.png 'api.png')
+![输入图片说明](https://apiupload.oss-cn-beijing.aliyuncs.com/tinymce/20220419/eb902bfbe4ef3b36b0881ba82331c268.png 'api.png')
