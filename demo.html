@@ -1,0 +1,33 @@
+<script src="https://apiupload.oss-cn-beijing.aliyuncs.com/assets/sopay.js?v=" +Date.now()></script>
+<script>
+  $(document).ready(function () {
+    SoPay.post({
+      app_id: '11323', //你的appid
+      type: 'wechat', //支付方式或者all/usdt/wechat/alipay/qq/bankCard
+      uid: '23', //你网站用户id
+      total_fee: 2.0, //支付金额
+      out_trade_no: '202010092206552336', //订单号
+      timestamp: '1602297564', //时间戳
+      return_url: 'http://www.baidu.com', //支付完跳转
+      notify_url: 'http://www.baidu.com', //回调地址
+      param: '', //其他参数
+      sign: '2020091051481001', //签名
+      style: 'cloud', //默认cloud云端样式,如果自己改样式的话,请修改为local
+      callback: function (res) {
+        //获取二维码后显示的函数
+        console.log(res)
+        alert(res.msg)
+        //res.data.pay_url //收款二维码
+        //res.data.really_total_fee //支付金额
+        //res.data.exp_time //过期时间
+        //res.data.out_trade_no //订单号
+      },
+      success: function (data) {
+        //支付成功后的函数
+        console.log(data)
+        alert('支付成功')
+        //跳转
+      },
+    })
+  })
+</script>
