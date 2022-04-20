@@ -1,7 +1,7 @@
 <!--
  * @Author: will
  * @LastEditors: will
- * @Description:
+ * @Description:双仓库
 -->
 
 > USDT_TRC20 充值 API.USDT TRC20 TRON 微信，支付宝,云闪付,alipay,wechat 免签支付
