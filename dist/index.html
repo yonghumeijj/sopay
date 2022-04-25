@@ -1,0 +1,231 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="min-width=device-width,initial-scale=1"><meta name=viewport content="min-width=device-width"><link rel=icon href=/favicon.ico><meta name=apple-mobile-web-app-capable content=yes><meta http-equiv=Expires content=0><meta http-equiv=Pragma content=no-cache><meta http-equiv=Cache-control content=no-cache><meta http-equiv=Cache content=no-cache><title></title><style>.chromeframe {
+        margin: 0.2em 0;
+        background: #ccc;
+        color: #000;
+        padding: 0.2em 0;
+      }
+
+      #loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999999;
+      }
+
+      #loader {
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        /* COLOR 1 */
+        border-top-color: #fff;
+        -webkit-animation: spin 2s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        -ms-animation: spin 2s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        -moz-animation: spin 2s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        -o-animation: spin 2s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        animation: spin 2s linear infinite;
+        /* Chrome, Firefox 16+, IE 10+, Opera */
+        z-index: 1001;
+      }
+
+      #loader:before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        /* COLOR 2 */
+        border-top-color: #fff;
+        -webkit-animation: spin 3s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        -moz-animation: spin 3s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        -o-animation: spin 3s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        -ms-animation: spin 3s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        animation: spin 3s linear infinite;
+        /* Chrome, Firefox 16+, IE 10+, Opera */
+      }
+
+      #loader:after {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #fff;
+        /* COLOR 3 */
+        -moz-animation: spin 1.5s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        -o-animation: spin 1.5s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        -ms-animation: spin 1.5s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        -webkit-animation: spin 1.5s linear infinite;
+        /* Chrome, Opera 15+, Safari 5+ */
+        animation: spin 1.5s linear infinite;
+        /* Chrome, Firefox 16+, IE 10+, Opera */
+      }
+
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+          /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(0deg);
+          /* IE 9 */
+          transform: rotate(0deg);
+          /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(360deg);
+          /* IE 9 */
+          transform: rotate(360deg);
+          /* Firefox 16+, IE 10+, Opera */
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+          /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(0deg);
+          /* IE 9 */
+          transform: rotate(0deg);
+          /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(360deg);
+          /* IE 9 */
+          transform: rotate(360deg);
+          /* Firefox 16+, IE 10+, Opera */
+        }
+      }
+
+      #loader-wrapper .loader-section {
+        position: fixed;
+        top: 0;
+        width: 51%;
+        height: 100%;
+        background: #7171c6;
+        /* Old browsers */
+        z-index: 1000;
+        -webkit-transform: translateX(0);
+        /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateX(0);
+        /* IE 9 */
+        transform: translateX(0);
+        /* Firefox 16+, IE 10+, Opera */
+      }
+
+      #loader-wrapper .loader-section.section-left {
+        left: 0;
+      }
+
+      #loader-wrapper .loader-section.section-right {
+        right: 0;
+      }
+
+      /* Loaded */
+
+      .loaded #loader-wrapper .loader-section.section-left {
+        -webkit-transform: translateX(-100%);
+        /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateX(-100%);
+        /* IE 9 */
+        transform: translateX(-100%);
+        /* Firefox 16+, IE 10+, Opera */
+        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      .loaded #loader-wrapper .loader-section.section-right {
+        -webkit-transform: translateX(100%);
+        /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateX(100%);
+        /* IE 9 */
+        transform: translateX(100%);
+        /* Firefox 16+, IE 10+, Opera */
+        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      .loaded #loader {
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      .loaded #loader-wrapper {
+        visibility: hidden;
+        -webkit-transform: translateY(-100%);
+        /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateY(-100%);
+        /* IE 9 */
+        transform: translateY(-100%);
+        /* Firefox 16+, IE 10+, Opera */
+        -webkit-transition: all 0.3s 1s ease-out;
+        transition: all 0.3s 1s ease-out;
+      }
+
+      /* JavaScript Turned Off */
+
+      .no-js #loader-wrapper {
+        display: none;
+      }
+
+      .no-js h1 {
+        color: #222222;
+      }
+
+      #loader-wrapper .load_title {
+        font-family: 'Open Sans';
+        color: #fff;
+        font-size: 19px;
+        width: 100%;
+        text-align: center;
+        z-index: 9999999999999;
+        position: absolute;
+        top: 60%;
+        opacity: 1;
+        line-height: 30px;
+      }
+
+      #loader-wrapper .load_title span {
+        font-weight: normal;
+        font-style: italic;
+        font-size: 13px;
+        color: #fff;
+        opacity: 0.5;
+      }</style><link href=/css/chunk-060699a4.9c60620b.css rel=prefetch><link href=/css/chunk-062a5a46.0bd36c87.css rel=prefetch><link href=/css/chunk-114ac8f8.b9edb2c7.css rel=prefetch><link href=/css/chunk-1204d0b0.2fdf5df3.css rel=prefetch><link href=/css/chunk-1f78ab99.8b3dffe6.css rel=prefetch><link href=/css/chunk-1fcc11cd.d430b095.css rel=prefetch><link href=/css/chunk-2bd3a6b0.2fdf5df3.css rel=prefetch><link href=/css/chunk-35a2a63e.d430b095.css rel=prefetch><link href=/css/chunk-4509a17d.c7eaaa9c.css rel=prefetch><link href=/css/chunk-4c16f61d.0e433876.css rel=prefetch><link href=/css/chunk-4dc2c410.cec0b228.css rel=prefetch><link href=/css/chunk-4f17e1aa.2fdf5df3.css rel=prefetch><link href=/css/chunk-51d52b9c.96246860.css rel=prefetch><link href=/css/chunk-53c9513f.9c60620b.css rel=prefetch><link href=/css/chunk-588750d7.6153503a.css rel=prefetch><link href=/css/chunk-5a4004c8.9c60620b.css rel=prefetch><link href=/css/chunk-5eb0fa86.9c60620b.css rel=prefetch><link href=/css/chunk-7ac64c5a.e5715265.css rel=prefetch><link href=/css/chunk-7ff5a88f.9c60620b.css rel=prefetch><link href=/css/chunk-b058da3c.d430b095.css rel=prefetch><link href=/css/chunk-b20555ae.d430b095.css rel=prefetch><link href=/css/chunk-ba91edbc.953e847d.css rel=prefetch><link href=/css/chunk-c93c4d2e.9c60620b.css rel=prefetch><link href=/css/chunk-cc58d306.f8df8330.css rel=prefetch><link href=/css/chunk-ea092538.e5715265.css rel=prefetch><link href=/css/chunk-fd2d80d6.d430b095.css rel=prefetch><link href=/js/chunk-060699a4.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-062a5a46.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-114ac8f8.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-1204d0b0.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-1d8a4ef7.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-1f78ab99.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-1fcc11cd.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-2bd3a6b0.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-2d0c05fc.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-2d0cb6d4.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-2d0d0767.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-2d0d3c13.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-2d0d437c.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-2d0e495b.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-2d2297f1.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-2d230819.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-2d238268.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-35a2a63e.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-4509a17d.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-4aab228c.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-4c16f61d.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-4dc2c410.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-4f17e1aa.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-51d52b9c.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-53c9513f.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-588750d7.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-5a4004c8.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-5eb0fa86.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-648c461a.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-72a4f4a4.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-7ac64c5a.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-7ff5a88f.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-b058da3c.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-b20555ae.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-ba91edbc.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-c93c4d2e.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-cc58d306.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-ea092538.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/js/chunk-fd2d80d6.d17bca147e6685739b80.1650789984213.js rel=prefetch><link href=/css/app.3bcec34c.css rel=preload as=style><link href=/css/chunk-vendors.5924c964.css rel=preload as=style><link href=/js/app.d17bca147e6685739b80.1650789984213.js rel=preload as=script><link href=/js/chunk-vendors.d17bca147e6685739b80.1650789984213.js rel=preload as=script><link href=/css/chunk-vendors.5924c964.css rel=stylesheet><link href=/css/app.3bcec34c.css rel=stylesheet></head><body><div id=app><div id=loader-wrapper><div id=loader></div><div class="loader-section section-left"></div><div class="loader-section section-right"></div><div class=load_title>正在加载....,请耐心等待<br><span>V1.3</span></div></div></div><script src=//g.alicdn.com/tb/apush/2.0.5/??socketio.js,apush2.js></script><script>;(function(d, w, c) {
+        var s = d.createElement('script')
+        w[c] =
+          w[c] ||
+          function() {
+            ;(w[c].z = w[c].z || []).push(arguments)
+          }
+        s.async = true
+        s.src = 'https://static.ahc.ink/hecong.js'
+        if (d.head) d.head.appendChild(s)
+      })(document, window, '_AIHECONG')</script><script src=/js/chunk-vendors.d17bca147e6685739b80.1650789984213.js></script><script src=/js/app.d17bca147e6685739b80.1650789984213.js></script></body></html>
