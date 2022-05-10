@@ -8,7 +8,7 @@
 
 ## 项目地址
 
-<a href="http://home.bjyjbn.com/login/Y">http://home.bjyjbn.com/login/BCG</a>
+<a href="http://home.bjyjbn.com/login/BCG">http://home.bjyjbn.com/login/BCG</a>
 
 
 ## 主要功能
