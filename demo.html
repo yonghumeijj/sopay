@@ -4,9 +4,13 @@
  * @Description: 
 -->
 <html>
-  <head></head>
+  <head>
+    <meta charset="utf-8" />
+  </head>
   <body>
-    <script src="https://apiupload.oss-cn-beijing.aliyuncs.com/assets/sopay.js?v=" +Date.now()></script>
+    <script type="text/javascript">
+      document.write('<script type="text/javascript" src="https://apiupload.oss-cn-beijing.aliyuncs.com/assets/sopay.js?v=' + Math.random() + '"><\/script>')
+    </script>
     <script>
       $(document).ready(function () {
         SoPay.post({
@@ -20,7 +24,6 @@
           notify_url: 'http://www.baidu.com', //回调地址
           param: '', //其他参数
           sign: '2020091051481001', //签名
-          style: 'cloud', //默认cloud云端样式,如果自己改样式的话,请修改为local，然后在callback里面自己设置调用样式
           callback: function (res) {
             //获取二维码后显示的函数
             console.log(res)

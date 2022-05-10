@@ -8,7 +8,8 @@
 
 ## 项目地址
 
-<a href="http://home.bjyjbn.com/login/Y">http://home.bjyjbn.com/login/Y</a>
+<a href="http://home.bjyjbn.com/login/Y">http://home.bjyjbn.com/login/BCG</a>
+
 
 ## 主要功能
 
@@ -50,7 +51,9 @@
 ```javascript
 
 
-<script src="https://apiupload.oss-cn-beijing.aliyuncs.com/assets/sopay.js?v=" +Date.now()></script>
+<script type="text/javascript">
+document.write('<script type="text/javascript" src="https://apiupload.oss-cn-beijing.aliyuncs.com/assets/sopay.js?v=' + Math.random() + '"><\/script>')
+</script>
 <script>
     $(document).ready(function () {
         SoPay.post({
@@ -86,6 +89,78 @@
 </script>
 
 
+```
+
+
+
+- 参数详解
+
+  **SoPay.post 请求支付接口 说明**
+
+| 参数名       | 必选 | 类型    | 说明                  | 举例                                                                    |
+| :----------- | :--- | :------ | :-------------------- | :---------------------------------------------------------------------- |
+| app_id       | 是   | string  | 我们平台的 appid      | xxx                                                                     |
+| type         | 是   | string  | 微信还是支付          | all/wechat/alipay/qq/bankCard alipay                                    |
+| uid          | 是   | string  | 你平台用户 id         | 回调发送参数用于区分用户                                                |
+| out_trade_no | 是   | string  | 订单号                |                                                                         |
+| total_fee    | 是   | string  | 金额                  | 2.00 保留 2 位小数                                                      |
+| sign         | 是   | string  | 签名                  | 参考签名算法                                                            |
+| notify_url   | 是   | string  | 回调地址              | <a href="http://www.baidu.com" target="_blank">http://www.baidu.com</a> |
+| return_url   | 是   | string  | 支付成功后返回地址    | <a href="http://www.baidu.com" target="_blank">http://www.baidu.com</a> |
+| callback     | 是   | funtion | 请求成功后的函数      |                                                                         |
+| success      | 是   | funtion | 支付成功后的函数      | 无需轮训查询结果,我们会给 notify_url 后端发送支付结果                   |
+| style        | 否   | string  | 页面样式              | 默认 cloud 云端样式,如果自己改样式的话,请修改为 local                   |
+| param        | 否   | string  | 其他参数,回调原路返回 | {"a":1,"b":2}                                                           |
+| timestamp    | 否   | string  | 时间戳                | 1602297564                                                              |
+
+**callback 请求成功后参数详解**
+
+| 参数名               | 类型   | 说明                         |
+| :------------------- | :----- | ---------------------------- |
+| code                 | string | 1 成功,小于 1 失败           |
+| msg                  | string | 消息提示                     |
+| data                 | array  |                              |
+| ├── out_trade_no     | string | 你网站订单号                 |
+| ├── transaction_id   | string | 我们平台订单号               |
+| ├── pay_type         | string | 支付类型                     |
+| ├── total_fee        | string | 订单金额                     |
+| ├── really_total_fee | string | 实际支付金额                 |
+| ├── pay_url          | string | 生成的二维码图片 base64 编码 |
+| ├── exp_time         | string | 过期时间                     |
+| ├── param            | string | 下单时传送的其他参数         |
+
+**success 支付成功后的函数返回(<font color=Crimson> 同时我们也会给你的回调 url,notify_url 发送同样数据</font>)**
+
+| 参数名           | 类型   | 说明                             |
+| :--------------- | :----- | -------------------------------- |
+| code             | string | 1 成功,小于 1 失败               |
+| msg              | string | 消息提示                         |
+| type             | string | 支付类型 wechat                  |
+| out_trade_no     | string | 你网站订单号                     |
+| transaction_id   | string | 我们平台订单号                   |
+| total_fee        | string | 订单金额                         |
+| really_total_fee | string | 实际支付金额                     |
+| d_robots_id      | string | 回调通道                         |
+| param            | string | 下单时传送的其他参数             |
+| uid              | string | 你网站的用户 id                  |
+| sign             | string | 回调签名,具体请查看回调 签名计算 |
+
+** notify_url 回调 (<font color=Crimson> 请使用 POST 请求接收</font>)**
+
+| 参数名           | 类型   | 说明               |
+| :--------------- | :----- | ------------------ |
+| total_fee        | string | 订单金额           |
+| out_trade_no     | string | 订单号             |
+| transaction_id   | string | 我们平台订单号     |
+| param            | string | 其他参数           |
+| uid              | Number | 下单时候填写的 uid |
+| sign             | string | 用于验证签名       |
+| really_total_fee | string | 实际支付金额       |
+
+- MD5 签名的字符串为
+
+```
+app_id=xxxxx&out_trade_no=xxxxx&param=&timestamp=1603698374&total_fee=xxxxx&uid=xxxxx&key=xxxxx
 ```
 
 # 项目图片
