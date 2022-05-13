@@ -49,8 +49,6 @@
 ## 对接方式
 
 ```javascript
-
-
 <script type="text/javascript">
 document.write('<script type="text/javascript" src="https://apiupload.oss-cn-beijing.aliyuncs.com/assets/sopay.js?v=' + Math.random() + '"><\/script>')
 </script>
@@ -90,6 +88,20 @@ document.write('<script type="text/javascript" src="https://apiupload.oss-cn-bei
 
 
 ```
+
+
+## html的demo
+
+https://github.com/amu1433/sopay/blob/main/demo.html
+
+
+## php的demo（请先下载PaySdk文件到你网站的根目录）
+
+https://github.com/amu1433/sopay/blob/main/demo.php
+
+
+## dist(文件夹为平台的前端文件)
+
 
 
 
