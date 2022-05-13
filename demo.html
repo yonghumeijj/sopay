@@ -8,6 +8,21 @@
     <meta charset="utf-8" />
   </head>
   <body>
+    <div class="url_pay">
+      <h2><img src="" /></h2>
+      <div class="warp">
+        <h3>请付款<span style="font-size: 34px">👉</span><span class="total_fee"></span>元</h3>
+        <h4>支付成功后请耐心等待3-6秒,自动跳转(<span>多付少付不到账</span>)</h4>
+        <div class="qr"><img src="https://apiupload.oss-cn-beijing.aliyuncs.com/assets/lodding.png" id="base64img" /></div>
+        <div id="myProgress">
+          <div id="myBar">100%</div>
+        </div>
+        <h6>支付倒计时:<span class="exprie_time" id="exprie_time"></span>秒</h6>
+        <a href="javascript:void(0)" class="payok">支付完成点击这里</a>
+        <h5></h5>
+      </div>
+    </div>
+
     <script type="text/javascript">
       document.write('<script type="text/javascript" src="https://apiupload.oss-cn-beijing.aliyuncs.com/assets/sopay.js?v=' + Math.random() + '"><\/script>')
     </script>
@@ -26,8 +41,15 @@
           sign: '2020091051481001', //签名
           callback: function (res) {
             //获取二维码后显示的函数
-            console.log(res)
-            alert(res.msg)
+            if (res.code != 1) {
+              swal('错误', res.msg, 'error')
+              return
+            }
+            $('#base64img').attr('src', res.data.pay_url)
+            $('.total_fee').html(res.data.really_total_fee)
+            $('.exprie_time').html(res.data.exp_time)
+            $('.order_no').html(res.data.out_trade_no)
+
             //res.data.pay_url //收款二维码
             //res.data.really_total_fee //支付金额
             //res.data.exp_time //过期时间
