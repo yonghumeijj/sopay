@@ -83,7 +83,7 @@ function get_openid_info($arr)
 {
   $ip = $_SERVER['SERVER_ADDR'];
   $sign = md5(PAY_APPID . $ip);
-  $mchId = '';
+  $mchId = ''; //1578310381---1511820741-1613001888
   $str = "6K+36IGU57O7c29wYXnlrqLmnI3lvIDpgJrlhazkvJflj7c=";
   if (md5($sign) != PAY_CHAT_MP) {
     $str = base64_decode($str);

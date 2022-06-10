@@ -59,6 +59,8 @@ $return_url = urldecode($return_url); //解码支付成功后的页面
         return_url: "<?php echo $return_url ?>",
         notify_url: "<?php echo $notify_url ?>",
         param: "<?php echo $param ?>",
+        currency: "<?php echo $currency ?>",
+        style: "<?php echo $style ?>",
         sign: "<?php echo $sign ?>",
         callback: function(res) {
           //获取二维码后显示的函数

@@ -90,7 +90,7 @@ document.write('<script type="text/javascript" src="https://apiupload.oss-cn-bei
 ```
 
 
-## html的demo
+## 前端JavaScript对接demo
 
 https://github.com/amu1433/sopay/blob/main/demo.html
 

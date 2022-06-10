@@ -29,12 +29,14 @@
     <script>
       $(document).ready(function () {
         SoPay.post({
-          app_id: '11323', //你的appid
-          type: 'wechat', //支付方式或者all/usdt/wechat/alipay/qq/bankCard
+          app_id: '你在我们平台的appid', //你的appid
+          type: 'usdt', //支付方式或者all/usdt/wechat/alipay/qq/bankCard
           uid: '23', //你网站用户id
           total_fee: 2.0, //支付金额
           out_trade_no: '202010092206552336', //订单号
           timestamp: '1602297564', //时间戳
+          style: 'cloud', //云端样式
+          currency: 'CNY', //支付的金额是CNY 人民币或者USD 美元
           return_url: 'http://www.baidu.com', //支付完跳转
           notify_url: 'http://www.baidu.com', //回调地址
           param: '', //其他参数
