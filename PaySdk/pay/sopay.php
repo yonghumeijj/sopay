@@ -60,6 +60,7 @@ $return_url = urldecode($return_url); //解码支付成功后的页面
         notify_url: "<?php echo $notify_url ?>",
         param: "<?php echo $param ?>",
         currency: "<?php echo $currency ?>",
+        language: "<?php echo $language ?>",
         style: "<?php echo $style ?>",
         sign: "<?php echo $sign ?>",
         callback: function(res) {

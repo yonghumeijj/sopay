@@ -2,7 +2,7 @@
 /*
  * @Author: will
  * @Date: 2020-09-30 00:59:45
- * @LastEditTime: 2022-06-10 15:19:36
+ * @LastEditTime: 2022-06-11 00:45:34
  * @LastEditors: will
  * @Description: 
  */
@@ -11,7 +11,7 @@
 //支付平台选择
 define("PAY_APPID", "xxxx"); //你的appid
 define("PAY_KEY", "xxxx"); //你的秘钥
-define('PAY_TYPE', 'usdt'); //支付方式或者all/usdt/wechat/alipay/qq/bankCard
+define('PAY_TYPE', 'usdtAndTrx'); //支付方式或者all/usdtAndTrx/usdt/trx/wechat/alipay/qq/bankCard/alipay    
 
 
 /*以下信息为可选项目*/
