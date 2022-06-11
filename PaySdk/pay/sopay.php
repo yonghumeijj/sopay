@@ -30,21 +30,6 @@ $return_url = urldecode($return_url); //解码支付成功后的页面
 
 <body>
 
-  <div class="url_pay">
-    <h2><img src="" /></h2>
-    <div class="warp">
-      <h3>请付款<span style="font-size:34px">👉</span><span class="total_fee"></span>元</h3>
-      <h4>支付成功后请耐心等待3-6秒,自动跳转(<span>多付少付不到账</span>)</h4>
-      <div class="qr"><img src="https://apiupload.oss-cn-beijing.aliyuncs.com/assets/lodding.png" id="base64img" /></div>
-      <div id="myProgress">
-        <div id="myBar">100%</div>
-      </div>
-      <h6>支付倒计时:<span class="exprie_time" id="exprie_time"></span>秒</h6>
-      <a href="javascript:void(0)" class="payok">支付完成点击这里</a>
-      <h5></h5>
-    </div>
-  </div>
-
 
 
   <script>
