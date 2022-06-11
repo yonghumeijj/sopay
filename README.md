@@ -56,11 +56,13 @@ document.write('<script type="text/javascript" src="https://apiupload.oss-cn-bei
     $(document).ready(function () {
         SoPay.post({
           app_id: '11323', //你的appid
-          type: 'wechat', //支付方式或者all/usdt/wechat/alipay/qq/bankCard
+          type: 'usdtAndTrx', //支付方式或者all/usdtAndTrx/usdt/trx/wechat/alipay/qq/bankCard/alipay    
           uid: '23', //你网站用户id
           total_fee: 2.00, //支付金额
           out_trade_no: '202010092206552336', //订单号
-          timestamp: '1602297564', //时间戳
+          style: 'cloud', //云端样式
+          language: 'zh', //语言zh中文/en英文
+          currency: 'CNY', //支付的金额是CNY 人民币或者USD 美元
           return_url: 'http://www.baidu.com', //支付完跳转
           notify_url: 'http://www.baidu.com', //回调地址
           param: "", //其他参数
