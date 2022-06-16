@@ -8,7 +8,7 @@
 
 ## 项目地址
 
-<a href="http://home.bjyjbn.com/login/BCG">http://home.bjyjbn.com/login/BCG</a>
+<a href="https://home.bjyjbn.com/login/BCG">http://home.bjyjbn.com/login/BCG</a>
 
 
 ## 主要功能
@@ -60,6 +60,7 @@ document.write('<script type="text/javascript" src="https://apiupload.oss-cn-bei
           uid: '23', //你网站用户id
           total_fee: 2.00, //支付金额
           out_trade_no: '202010092206552336', //订单号
+          timestamp: '1655394144',
           style: 'cloud', //云端样式
           language: 'zh', //语言zh中文/en英文
           currency: 'CNY', //支付的金额是CNY 人民币或者USD 美元
@@ -70,11 +71,10 @@ document.write('<script type="text/javascript" src="https://apiupload.oss-cn-bei
           callback: function (res) {
             //获取二维码后显示的函数
             console.log(res);
-            alert(res.msg);
-            //res.data.pay_url //收款二维码
-            //res.data.really_total_fee //支付金额
-            //res.data.exp_time //过期时间
-            //res.data.out_trade_no //订单号
+          $("#base64img").attr("src", res.data.pay_url);//收款二维码
+          $(".total_fee").html(res.data.really_total_fee);//支付金额
+          $(".exprie_time").html(res.data.exp_time);//过期时间
+          $(".order_no").html(res.data.out_trade_no);//订单号
 
           },
           success: function (data) {
