@@ -55,10 +55,10 @@ $return_url = urldecode($return_url); //解码支付成功后的页面
             swal('错误', res.msg, 'error')
             return
           }
-          $("#base64img").attr("src", res.data.pay_url);
-          $(".total_fee").html(res.data.really_total_fee);
-          $(".exprie_time").html(res.data.exp_time);
-          $(".order_no").html(res.data.out_trade_no);
+          $("#base64img").attr("src", res.data.pay_url); //收款二维码
+          $(".total_fee").html(res.data.really_total_fee); //支付金额
+          $(".exprie_time").html(res.data.exp_time); //过期时间
+          $(".order_no").html(res.data.out_trade_no); //订单号
         },
         success: function(data) {
           //支付成功后的函数
