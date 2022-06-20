@@ -1,5 +1,5 @@
 
-> USDT_TRC20 充值 API.USDT TRC20 TRON 微信，支付宝,云闪付,alipay,wechat 免签支付
+> USDT_TRC20 recharge API.USDT TRC20 TRON alipay,wechat payment
 
 **English** | [中文](https://github.com/amu1433/sopay/blob/main/README.zh.md)
 
@@ -70,7 +70,7 @@ document.write('<script type="text/javascript" src="https://apiupload.oss-cn-bei
 | :----------- | :--- | :------ | :----------------------------- | :----------------------------------------------------------------------------------------- |
 | app_id       | yes  | string  | Our Platform appid             | xxx                                                                                        |
 | type         | yes  | string  | Mode of payment                | all/usdtAndTrx/usdt/trx/wechat/alipay/qq/bankCard/alipay                                   |
-| uid          | yes  | string  | our Websites  userID           | 回调发送参数用于区分用户                                                                   |
+| uid          | yes  | string  | your Websites  userID          | your Websites  userID                                                                      |
 | out_trade_no | yes  | string  | order                          |
 | timestamp    | yes  | string  | timestamp                      | timestamp                                                                                  |
 | total_fee    | yes  | string  | Amount                         | 2.00 保留 2 位小数                                                                         |
